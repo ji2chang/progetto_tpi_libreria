@@ -27,10 +27,6 @@ class FakeDatabase:
         """Restituisce un libro dato il suo ID, oppure None."""
         return self.libri.get(book_id)
 
-    def filter_by_genere(self, genere):
-        """Restituisce tutti i libri di un certo genere."""
-        return [libro for libro in self.libri.values() if libro["genere"] == genere]
-
     def add(self, libro):
         """Aggiunge un nuovo libro assegnando automaticamente un ID."""
         nuovo_id = max(self.libri.keys()) + 1 if self.libri else 1
@@ -41,3 +37,6 @@ class FakeDatabase:
     def delete(self, book_id):
         """Elimina un libro per ID. Restituisce True se eliminato, False altrimenti."""
         return self.libri.pop(book_id, None) is not None
+
+    def delete_all(self):
+        self.libri.clear()
