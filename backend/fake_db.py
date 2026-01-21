@@ -27,12 +27,10 @@ class FakeDatabase:
         """Restituisce un libro dato il suo ID, oppure None."""
         return self.libri.get(book_id)
 
-    def add(self, libro):
+    def add(self):
         """Aggiunge un nuovo libro assegnando automaticamente un ID."""
         nuovo_id = max(self.libri.keys()) + 1 if self.libri else 1
-        libro["id"] = nuovo_id
-        self.libri[nuovo_id] = libro
-        return libro
+        self.libri[nuovo_id] = genera_libro(nuovo_id)
 
     def delete(self, book_id):
         """Elimina un libro per ID. Restituisce True se eliminato, False altrimenti."""
