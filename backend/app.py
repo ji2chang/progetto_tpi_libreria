@@ -3,7 +3,6 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-books = []
 @app.get("/api/libri")
 def list_books():
     ...
@@ -12,8 +11,8 @@ def list_books():
 def add_book():
     ...
 
-@app.delete("/api/libri/<id>")
-def delete_book_by_id():
+@app.delete("/api/libri/<int:id>")
+def delete_book_by_id(id: int):
     ...
 
 @app.delete("/api/libri")
