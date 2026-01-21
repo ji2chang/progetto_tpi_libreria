@@ -24,5 +24,5 @@ def delete_book_by_id(id: int):
 def delete_all_books():
     return jsonify({"success": True})
 
-if __name__ == "main":
+if __name__ == "__main__":
     app.run(host="0.0.0.0",port=12345,debug=True)
