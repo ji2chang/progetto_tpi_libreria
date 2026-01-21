@@ -22,6 +22,7 @@ def delete_book_by_id(id: int):
 
 @app.delete("/api/libri")
 def delete_all_books():
+    localDatabase.delete_all()
     return jsonify({"success": True})
 
 if __name__ == "__main__":
