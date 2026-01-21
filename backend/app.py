@@ -1,0 +1,25 @@
+from flask import Flask
+from flask_cors import CORS
+app = Flask(__name__)
+CORS(app)
+
+books = []
+@app.get("/api/libri")
+def list_books():
+    ...
+
+@app.post("/api/libri")
+def add_book():
+    ...
+
+@app.delete("/api/libri/<id>")
+def delete_book_by_id():
+    ...
+
+@app.delete("/api/libri")
+def delete_all_books():
+    ...
+
+
+if __name__ == "main":
+    app.run(host="0.0.0.0",port=12345,debug=True)
