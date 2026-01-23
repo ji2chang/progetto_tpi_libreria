@@ -9,6 +9,30 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Stile per la barra di ricerca */
+.input-ricerca {
+    flex: 1;
+    min-width: 300px;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.input-ricerca:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    transform: translateY(-1px);
+}
+
+.input-ricerca::placeholder {
+    color: #95a5a6;
+}
+
 /* Titolo */
 .libreria-titolo {
     color: #2c3e50;
